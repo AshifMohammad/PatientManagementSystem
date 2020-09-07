@@ -1,0 +1,80 @@
+{
+  "name": "HumanResourceManagement",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshifMohammad/HumarResourceManagement.git"
+  },
+  "license": "MIT",
+  "main": "src/index.jsx",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open",
+    "precommit": "lint-staged",
+    "prepush": "prettier --check"
+  },
+  "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "axios": "^0.20.0",
+    "boostrap": "^2.0.0",
+    "bootstrap": "^4.5.2",
+    "classnames": "^2.2.6",
+    "font-awesome": "^4.7.0",
+    "formik": "^2.1.4",
+    "history": "^4.10.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "lodash": "^4.17.20",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.11.0",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.3.0",
+    "react-bootstrap-table2-filter": "^1.3.3",
+    "react-bootstrap-table2-paginator": "^2.1.2",
+    "react-bootstrap-table2-toolkit": "^2.1.3",
+    "react-dom": "^16.8.6",
+    "react-line-awesome": "^1.3.2",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "rxjs": "^6.3.3",
+    "yup": "^0.28.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-lodash": "^3.3.4",
+    "css-loader": "^3.4.2",
+    "eslint": "^7.7.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.11.0",
+    "less-loader": "^5.0.0",
+    "path": "^0.12.7",
+    "prettier": "1.0.0",
+    "prettier-eslint": "^11.0.0",
+    "react-bootstrap-table-next": "^4.0.3",
+    "style-loader": "^1.1.3",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,scss,css,less,md,jsx,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
