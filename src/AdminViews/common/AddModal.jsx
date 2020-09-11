@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { AddUserFields } from "@/AdminViews/common/AddUserFields";

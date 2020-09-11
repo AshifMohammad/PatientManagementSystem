@@ -1,10 +1,10 @@
 import React from "react";
 import { TextField } from "@/AdminViews/common/TextField";
+
 import get from "lodash/get";
 
 export default function AddCompanyModalBody(props) {
   const { rowData } = props;
-  console.log(rowData, "at the body");
   return (
     <form>
       <div className="row">

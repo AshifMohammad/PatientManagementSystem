@@ -1,5 +1,5 @@
-var HtmlWebpackPlugin = require("html-webpack-plugin")
-const path = require("path")
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   mode: "development",
@@ -14,6 +14,13 @@ module.exports = {
           plugins: ["lodash"],
           presets: [["@babel/env", { targets: { node: 6 } }]]
         }
+      },
+      {
+        test: /\.tsx?$/,
+        use: {
+          loader: "babel-loader"
+        },
+        exclude: [/node_modules/]
       },
       {
         test: /\.less$/,
@@ -50,7 +57,7 @@ module.exports = {
   },
   resolve: {
     mainFiles: ["index", "Index"],
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".tsx"],
     alias: {
       "@": path.resolve(__dirname, "src/")
     }
@@ -71,4 +78,4 @@ module.exports = {
       apiUrl: "http://localhost:4000"
     })
   }
-}
+};
