@@ -21,7 +21,7 @@ jobs: # a collection of steps
             - ./node_modules
       - run: # run tests
           name: build
-          command: npm build
+          command: npm run build
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: coverage
           prefix: coverage
