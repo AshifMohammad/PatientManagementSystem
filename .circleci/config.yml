@@ -19,10 +19,15 @@ jobs: # a collection of steps
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run: # run tests
+      - run: # run build
           name: build
           command: npm run build
+      - run: # download artifacts
+          command: |
+            mkdir -p /tmp/build
+            cp dist /tmp/build
+          when: on_fail
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
-          path: coverage
-          prefix: coverage
+          path: /tmp/build
+
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
