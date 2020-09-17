@@ -42,7 +42,7 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: hcm_packages
+          name: pcm_packages
           path: dist
             
           
