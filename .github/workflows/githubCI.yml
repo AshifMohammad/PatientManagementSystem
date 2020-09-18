@@ -33,6 +33,10 @@ jobs:
       # Runsnpm script to build the project
       - name: Run a multi-line script
         run: npm install
+      
+       # running prettier 
+      - name: Run prettier
+        run: prettier --check
         
       # building the project
       - name: Run Webpack to build
