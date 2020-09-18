@@ -36,7 +36,7 @@ jobs:
       
        # running prettier 
       - name: Run prettier
-        run: prettier --check
+        run: npm run verify:prettier
         
       # building the project
       - name: Run Webpack to build
