@@ -19,6 +19,9 @@ jobs: # a collection of steps
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+      - run: # run prettier
+          name: format-prettier
+          command: prettier --check
       - run: # run build
           name: build
           command: npm run build
