@@ -11,7 +11,8 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open",
     "precommit": "lint-staged",
-    "prepush": "prettier --check"
+    "prepush": "prettier --check",
+    "verify:prettier": " node_modules/prettier/bin-prettier.js src/  --check"
   },
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.1.11",

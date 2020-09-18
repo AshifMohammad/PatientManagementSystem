@@ -14,7 +14,7 @@ class CustomGrid extends Component {
     const rowEvents = {
       onClick: (e, row, rowIndex) => {
         console.log(e, row, rowIndex);
-      },
+      }
     };
     return (
       <div className="custom-table-grid">

@@ -10,7 +10,7 @@ import { CustomerManagement } from "@/AdminViews/CustomerManagement";
 
 export default function AdminViewContainer({ history, match }) {
   const { path } = match;
-console.log(path,"at container")
+  console.log(path, "at container");
   return (
     <Fragment>
       <Switch>

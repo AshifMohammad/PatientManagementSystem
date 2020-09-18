@@ -30,7 +30,7 @@ export default function TableSearchArea({ name, company }) {
           <div className="form-group form-focus select-focus">
             <select className="select floating">
               {roles &&
-                roles.map((role) => {
+                roles.map(role => {
                   return <option key={role.permission}>{role.roleName}</option>;
                 })}
             </select>

@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function AdminViewHeader({ title, pathName }) {
-    console.log(pathName)
+  console.log(pathName);
   return (
     <div className="page-header">
       <div className="row align-items-center">
@@ -11,7 +11,6 @@ export default function AdminViewHeader({ title, pathName }) {
             <li className="breadcrumb-item">
               <a href={pathName}>Dashboard</a>
             </li>
-
           </ul>
         </div>
         <div className="col-auto float-right ml-auto">

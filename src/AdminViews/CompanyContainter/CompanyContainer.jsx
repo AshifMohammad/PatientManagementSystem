@@ -9,7 +9,6 @@ import { fetchCompanies } from "@/redux/actions/actions";
 import { NotAvailablePage } from "@/AdminViews/common/Pages";
 
 function CompanyContainer({ companies }) {
-
   const [user, setUser] = useState({});
   //middleware or something will getch the list of companies
   useEffect(async () => {

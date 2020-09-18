@@ -4,14 +4,14 @@ export const UserData = [
     emailAddress: "John.Doe@gmail.com",
     company: "ABC Company",
     createdAt: String(new Date()),
-    role: "Admin",
+    role: "Admin"
   },
   {
     name: "John smith 1",
     emailAddress: "John.smoth@gmail.com",
     company: "DEF Company",
     createdAt: String(new Date()),
-    role: "ReadOnly",
+    role: "ReadOnly"
   },
   {
     name: "Abraham ",
@@ -19,7 +19,7 @@ export const UserData = [
     company: "FGH Company",
     createdAt: String(new Date()),
 
-    role: "Admin",
+    role: "Admin"
   },
   {
     name: "Rick Sanchez ",
@@ -27,7 +27,7 @@ export const UserData = [
     company: "Rick Company",
     createdAt: String(new Date()),
 
-    role: "Admin",
+    role: "Admin"
   },
   {
     name: "Morty  ",
@@ -35,7 +35,7 @@ export const UserData = [
     company: "Morty Company",
     createdAt: String(new Date()),
 
-    role: "Read Only",
+    role: "Read Only"
   },
   {
     name: "Leena Smith",
@@ -43,7 +43,7 @@ export const UserData = [
     company: "Leen Company",
     createdAt: String(new Date()),
 
-    role: "Admin",
+    role: "Admin"
   },
   {
     name: "Morty  ",
@@ -51,7 +51,7 @@ export const UserData = [
     company: "Morty Company",
     createdAt: String(new Date()),
 
-    role: "Read Only",
+    role: "Read Only"
   },
   {
     name: "Leena Smith",
@@ -59,7 +59,7 @@ export const UserData = [
     company: "Leen Company",
     createdAt: String(new Date()),
 
-    role: "Admin",
+    role: "Admin"
   },
   {
     name: "Rick Sanchez ",
@@ -67,7 +67,7 @@ export const UserData = [
     company: "Rick Company",
     createdAt: String(new Date()),
 
-    role: "Admin",
+    role: "Admin"
   },
   {
     name: "Morty  ",
@@ -75,8 +75,8 @@ export const UserData = [
     company: "Morty Company",
     createdAt: String(new Date()),
 
-    role: "Read Only",
-  },
+    role: "Read Only"
+  }
 ];
 
 export const roles = [
@@ -84,14 +84,14 @@ export const roles = [
   { roleName: "Admin", permission: "admin" },
   { roleName: "Read Only", permission: "readOnly" },
   { roleName: "Company Admin", permission: "companyAdmin" },
-  { roleName: "Company View Only", permission: "companyViewOnly" },
+  { roleName: "Company View Only", permission: "companyViewOnly" }
 ];
 
 export const companies = [
   { companyName: "Global Technologies" },
   { companyName: "ABC Technologies" },
   { companyName: "Inter Technologies" },
-  { companyName: "Corp Technologies" },
+  { companyName: "Corp Technologies" }
 ];
 
 export const userValues = {
@@ -103,5 +103,5 @@ export const userValues = {
   confirmPassword: "",
   acceptTerms: false,
   companyName: "",
-  role: "",
+  role: ""
 };

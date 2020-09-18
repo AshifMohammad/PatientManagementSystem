@@ -8,20 +8,20 @@ function List({ match, history }) {
   const [users, setUsers] = useState(null);
 
   useEffect(() => {
-    accountService.getAll().then((x) => setUsers(x));
+    accountService.getAll().then(x => setUsers(x));
   }, []);
 
   function deleteUser(id) {
     setUsers(
-      users.map((x) => {
+      users.map(x => {
         if (x.id === id) {
           x.isDeleting = true;
         }
         return x;
       })
     );
-    accountService.delete(id,history).then(() => {
-      setUsers((users) => users.filter((x) => x.id !== id));
+    accountService.delete(id, history).then(() => {
+      setUsers(users => users.filter(x => x.id !== id));
     });
   }
 
@@ -43,7 +43,7 @@ function List({ match, history }) {
         </thead>
         <tbody>
           {users &&
-            users.map((user) => (
+            users.map(user => (
               <tr key={user.id}>
                 <td>
                   {user.title} {user.firstName} {user.lastName}

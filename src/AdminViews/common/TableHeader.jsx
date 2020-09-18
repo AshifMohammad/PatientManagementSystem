@@ -6,7 +6,7 @@ export default function TableHeader({
   pathName,
   title,
   buttonName,
-  modalTitle,
+  modalTitle
 }) {
   const [showModal, setShowModal] = useState(false);
   const handleOnClick = () => {

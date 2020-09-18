@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment } from "react";
 
 export default function CompanySearchBox({
   handleSearch,
@@ -19,7 +19,7 @@ export default function CompanySearchBox({
               placeholder="Enter company to search"
               className="form-control floating"
               onChange={e => {
-                onCompanySearchChange(e)
+                onCompanySearchChange(e);
               }}
             />
           </div>
@@ -44,7 +44,7 @@ export default function CompanySearchBox({
               type="text"
               className="form-control floating"
               onChange={e => {
-                onEmailSearchChange(e)
+                onEmailSearchChange(e);
               }}
             />
           </div>
@@ -54,7 +54,7 @@ export default function CompanySearchBox({
             <label className="focus-label font-weight-bold" />
             <a
               onClick={() => {
-                handleClear()
+                handleClear();
               }}
               className="btn btn-success btn-block"
             >
@@ -66,7 +66,7 @@ export default function CompanySearchBox({
             <label className="focus-label font-weight-bold" />
             <a
               onClick={() => {
-                handleSearch()
+                handleSearch();
               }}
               className="btn btn-success btn-block"
             >
@@ -76,5 +76,5 @@ export default function CompanySearchBox({
         </div>
       </div>
     </div>
-  )
+  );
 }

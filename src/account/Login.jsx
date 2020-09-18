@@ -15,9 +15,7 @@ function Login({ history, location }) {
   const withRefresh = createBrowserHistory({ forceRefresh: true });
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string()
-      .email("Email is invalid")
-      .required("Email is required"),
+    email: Yup.string().email("Email is invalid").required("Email is required"),
     password: Yup.string().required("Password is required")
   });
 

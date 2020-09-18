@@ -1,73 +1,70 @@
-import React, { useEffect, useState } from "react"
-import { Dropdown, Accordion, Button, Card } from "react-bootstrap"
+import React, { useEffect, useState } from "react";
+import { Dropdown, Accordion, Button, Card } from "react-bootstrap";
 
-import { AdvanceCustomGrid } from "@/AdminViews/common/CustomGridTable"
-import { companies } from "@/_services/mockData/companiesRecords"
-import { columns, defaultSorted } from "./columnsDefs"
-import { CompanyModalDialog } from "@/AdminViews/common/ModalDialog"
-import AddCompanyModalBody from "./AddCompanyModalBody"
+import { AdvanceCustomGrid } from "@/AdminViews/common/CustomGridTable";
+import { companies } from "@/_services/mockData/companiesRecords";
+import { columns, defaultSorted } from "./columnsDefs";
+import { CompanyModalDialog } from "@/AdminViews/common/ModalDialog";
+import AddCompanyModalBody from "./AddCompanyModalBody";
 import {
   CompanyHeader,
   CompanySearchBox
-} from "@/AdminViews/CompanyContainter/index"
-import { RecordsNotFoundPage } from "@/AdminViews/common/Pages"
+} from "@/AdminViews/CompanyContainter/index";
+import { RecordsNotFoundPage } from "@/AdminViews/common/Pages";
 
-import "./style.less"
+import "./style.less";
 
 export default function CompanyDetails({ companies }) {
-  const [adminCompanies, setCompanies] = useState(companies)
-  const [companySearchValue, setCompanySearchValue] = useState("")
-  const [showAddCompanyDialog, setShowAddCompanyDialog] = useState(false)
-  const [showUpdateCompanyModal, setShowUpdateCompanyModal] = useState(false)
-  const [companyRowData, setCompanyRowData] = useState({})
+  const [adminCompanies, setCompanies] = useState(companies);
+  const [companySearchValue, setCompanySearchValue] = useState("");
+  const [showAddCompanyDialog, setShowAddCompanyDialog] = useState(false);
+  const [showUpdateCompanyModal, setShowUpdateCompanyModal] = useState(false);
+  const [companyRowData, setCompanyRowData] = useState({});
 
-  useEffect(
-    () => {
-      setCompanies(adminCompanies)
-    },
-    [adminCompanies]
-  )
+  useEffect(() => {
+    setCompanies(adminCompanies);
+  }, [adminCompanies]);
 
   const selectRow = {
     mode: "radio",
     clickToSelect: true
-  }
+  };
 
   const handleAddCompanyModal = () => {
-    setShowAddCompanyDialog(true)
-  }
+    setShowAddCompanyDialog(true);
+  };
 
   const onRowClick = (e, row, rowIndex) => {
-    console.log(row, "on row click")
-  }
+    console.log(row, "on row click");
+  };
   const onCompanySearchChange = ({ target: { value } }) =>
-    setCompanySearchValue(value)
+    setCompanySearchValue(value);
 
   const onEmailSearchChange = e => {
-    console.log(e, "email changes")
-  }
+    console.log(e, "email changes");
+  };
 
   const handleSearchClick = () => {
-    alert("making api call and returning companies to populate the table")
+    alert("making api call and returning companies to populate the table");
     const searchResult = adminCompanies.filter(
       company => company.name === companySearchValue
-    )
-    setCompanies(searchResult)
-  }
+    );
+    setCompanies(searchResult);
+  };
   const handleClearClick = () => {
-    setCompanySearchValue("")
-    setCompanies(companies && companies)
-  }
+    setCompanySearchValue("");
+    setCompanies(companies && companies);
+  };
 
   const handleOnEdit = (cell, row, rowIndex) => {
-    setShowUpdateCompanyModal(true)
-    setCompanyRowData(row)
-  }
+    setShowUpdateCompanyModal(true);
+    setCompanyRowData(row);
+  };
 
   const handleOnRedirect = (cell, row, rowIndex) => {
-    window.open(`/company-management/${row.companyUrl}`)
-  }
-  const isRecordFound = adminCompanies.length >= 1
+    window.open(`/company-management/${row.companyUrl}`);
+  };
+  const isRecordFound = adminCompanies.length >= 1;
 
   const editCompanyFormatter = (cell, row, rowIndex) => {
     return (
@@ -92,8 +89,8 @@ export default function CompanyDetails({ companies }) {
           </a>
         </Dropdown.Menu>
       </Dropdown>
-    )
-  }
+    );
+  };
 
   return (
     <div className="company-detail-wrapper">
@@ -138,27 +135,29 @@ export default function CompanyDetails({ companies }) {
           </Card.Body>
         </Card>
       </Card>
-      {showAddCompanyDialog &&
+      {showAddCompanyDialog && (
         <CompanyModalDialog
           show={showAddCompanyDialog}
           handleClose={() => {
-            setShowAddCompanyDialog(false)
+            setShowAddCompanyDialog(false);
           }}
           modalBody={AddCompanyModalBody}
           modalTitle={"Add Company"}
           saveBtnLabel="Save"
-        />}
-      {showUpdateCompanyModal &&
+        />
+      )}
+      {showUpdateCompanyModal && (
         <CompanyModalDialog
           show={showUpdateCompanyModal}
           handleClose={() => {
-            setShowUpdateCompanyModal(false)
+            setShowUpdateCompanyModal(false);
           }}
           modalBody={AddCompanyModalBody}
           modalTitle={"Update Company"}
           rowData={companyRowData}
           saveBtnLabel="Update"
-        />}
+        />
+      )}
     </div>
-  )
+  );
 }

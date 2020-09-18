@@ -1,6 +1,5 @@
 import ActionTypes from "@/redux/ActionTypes";
 
-
 const adminStates = (state, action) => {
   switch (action.type) {
     case ActionTypes.FETCH_COMPANIES:

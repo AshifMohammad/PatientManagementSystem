@@ -1,31 +1,31 @@
-import React, { useState, useEffect, lazy, Suspense } from "react"
-import { Route, Switch, useLocation } from "react-router-dom"
-import { Role } from "@/_helpers"
-import { accountService } from "@/_services"
-import { Nav, PrivateRoute, Alert } from "@/_components"
-import { UserManagement } from "@/AdminViews/UserManagement"
-import { Profile } from "@/profile"
-import { Admin } from "@/admin"
-import { Account } from "@/account"
-import { Constants } from "@/Constants"
-import { CustomerManagement } from "@/AdminViews/CustomerManagement"
-import { NotAvailablePage } from "@/AdminViews/common/Pages"
+import React, { useState, useEffect, lazy, Suspense } from "react";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { Role } from "@/_helpers";
+import { accountService } from "@/_services";
+import { Nav, PrivateRoute, Alert } from "@/_components";
+import { UserManagement } from "@/AdminViews/UserManagement";
+import { Profile } from "@/profile";
+import { Admin } from "@/admin";
+import { Account } from "@/account";
+import { Constants } from "@/Constants";
+import { CustomerManagement } from "@/AdminViews/CustomerManagement";
+import { NotAvailablePage } from "@/AdminViews/common/Pages";
 
 function App() {
-  const { pathname } = useLocation()
-  const [user, setUser] = useState({})
+  const { pathname } = useLocation();
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-    const subscription = accountService.user.subscribe(x => setUser(x))
-    return subscription.unsubscribe
-  }, [])
+    const subscription = accountService.user.subscribe(x => setUser(x));
+    return subscription.unsubscribe;
+  }, []);
 
   // to improve performance we can import lazy all the components at the routes level
   const lazyContainer = lazy(() =>
     import(
       /* webpackChunkName: "companyContainerChunk" */ /* webpackPrefetch: true */ "../AdminViews/CompanyContainter/CompanyContainer"
     )
-  )
+  );
   return (
     <div className={"app-container " + (user && " bg-light")}>
       <Alert />
@@ -64,7 +64,7 @@ function App() {
         </Switch>
       </Suspense>
     </div>
-  )
+  );
 }
 
-export { App }
+export { App };

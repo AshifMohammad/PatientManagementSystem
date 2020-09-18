@@ -10,7 +10,7 @@ function AddUserFields({ history, userValues, onSubmit }) {
   const [user, setUser] = useState(userValues);
   const initialValues = user;
 
-  const handleOnFieldChange = (e) => {
+  const handleOnFieldChange = e => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
@@ -20,7 +20,7 @@ function AddUserFields({ history, userValues, onSubmit }) {
     lastName: Yup.string(),
     email: Yup.string().email("Email is invalid"),
     companyName: Yup.string().required("Please enter the Company Name "),
-    role: Yup.string().required("Please select the roles to create a user."),
+    role: Yup.string().required("Please select the roles to create a user.")
   });
 
   // function onSubmit(fields, { setStatus, setSubmitting }) {
@@ -78,7 +78,7 @@ function AddUserFields({ history, userValues, onSubmit }) {
                 <label>First Name</label>
                 <Field
                   value={user.firstName}
-                  onChange={(e) => handleOnFieldChange(e)}
+                  onChange={e => handleOnFieldChange(e)}
                   name="firstName"
                   type="text"
                   className={
@@ -95,7 +95,7 @@ function AddUserFields({ history, userValues, onSubmit }) {
               <div className="form-group col-5">
                 <label>Last Name</label>
                 <Field
-                  onChange={(e) => {
+                  onChange={e => {
                     handleOnFieldChange(e);
                   }}
                   value={user.lastName}
@@ -118,7 +118,7 @@ function AddUserFields({ history, userValues, onSubmit }) {
               <Field
                 name="email"
                 value={user.emailAddress}
-                onChange={(e) => {
+                onChange={e => {
                   handleOnFieldChange(e);
                 }}
                 type="text"
@@ -137,7 +137,7 @@ function AddUserFields({ history, userValues, onSubmit }) {
               <label>Company Name</label>
               <Field
                 value={user.companyName}
-                onChange={(e) => handleOnFieldChange(e)}
+                onChange={e => handleOnFieldChange(e)}
                 name="companyName"
                 type="text"
                 className={
@@ -164,7 +164,7 @@ function AddUserFields({ history, userValues, onSubmit }) {
                 }
               >
                 {roles &&
-                  roles.map((role) => {
+                  roles.map(role => {
                     return (
                       <option value={role.permission}>{role.roleName}</option>
                     );

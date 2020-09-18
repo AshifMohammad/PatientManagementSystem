@@ -7,7 +7,7 @@ export default function Table({
   title,
   pathName,
   buttonName,
-  modalTitle,
+  modalTitle
 }) {
   return (
     <div>

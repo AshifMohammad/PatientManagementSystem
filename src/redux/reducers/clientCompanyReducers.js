@@ -1,6 +1,5 @@
 import ActionTypes from "@/redux/ActionTypes";
 
-
 const clientStates = (state, action) => {
   switch (action.type) {
     case ActionTypes.SAVE_COMPANY:

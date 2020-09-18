@@ -1,5 +1,5 @@
-import React from "react"
-import "./style.less"
+import React from "react";
+import "./style.less";
 
 export default function SideBar({ sideBarItemList }) {
   return (
@@ -20,11 +20,11 @@ export default function SideBar({ sideBarItemList }) {
                       <span className="ml-2">{sideBarItem.name}</span>
                     </a>
                   </li>
-                )
+                );
               })}
           </ul>
         </div>
       </div>
     </div>
-  )
+  );
 }
